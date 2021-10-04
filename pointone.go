@@ -1,5 +1,5 @@
 package main
 
 func PointOne(n *int) {
-	*n = 0
+	*n = 1
 }

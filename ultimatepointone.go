@@ -1,7 +1,5 @@
 package main
 
 func main() {
-	a := 0
-	b := &a
-	n := &b
+	*a = 1 == *b == *c
 }

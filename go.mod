@@ -1,4 +1,4 @@
-module challenge-go
+module piscine
 
 go 1.17
 

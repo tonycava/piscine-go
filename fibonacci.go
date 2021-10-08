@@ -1,14 +1,13 @@
 package piscine
 
 func Fibonacci(index int) int {
-	if index < 2 {
-		return index
-	}
 	if index < 0 {
 		return -1
-	}
-	if index == 1 || index == 2 {
+	} else if index == 0 {
 		return 0
+	} else if index == 1 {
+		return 1
+	} else {
+		return Fibonacci(index-1) + Fibonacci(index-2)
 	}
-	return Fibonacci(index-1) + (index - 2)
 }

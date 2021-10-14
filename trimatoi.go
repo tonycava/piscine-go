@@ -1,41 +1,24 @@
 package piscine
 
 func TrimAtoi(s string) int {
-	validstr := valid(s)
-	art := 0
-	tale := len(validstr)
-	signe := 1
-
-	if tale == 0 {
+	Isnegative := false
+	blank := false
+	n := 0
+	if len(s) < 1 {
 		return 0
 	}
-	if validstr[0] == '-' {
-		signe = -1
-	}
-	for i := 0; i < tale; i++ {
-		if i == 0 && validstr[0] == '-' {
+	for _, char := range s {
+		if char < '0' || char > '9' || (char >= 97 && char <= 122) {
+			if char == '-' && !blank {
+				Isnegative = true
+			}
 			continue
 		}
-		if i == 0 && validstr[0] == '+' {
-			continue
-		}
-		if validstr[i] > '9' || validstr[i] < '0' && i != 0 {
-			return 0
-		} else {
-			art *= 10
-			art += int(validstr[i]) - '0'
-		}
+		n = n*10 + int(char-48)
+		blank = true
 	}
-	return art * signe
-}
-func valid(s string) string {
-	table := []rune(s)
-	tale := len(table)
-	var validstr string
-	for i := 0; i < tale; i++ {
-		if table[i] >= '0' && table[i] <= '9' || table[i] == '+' || table[i] == '-' {
-			validstr = validstr + string(table[i])
-		}
+	if Isnegative {
+		return -n
 	}
-	return validstr
+	return n
 }

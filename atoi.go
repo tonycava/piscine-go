@@ -5,6 +5,9 @@ func Atoi(s string) int {
 	art := 0
 	tale := len(table)
 	signe := 1
+	if tale == 0 {
+		return 0
+	}
 	if table[0] == '-' {
 		signe = -1
 	}

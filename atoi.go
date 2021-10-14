@@ -9,17 +9,17 @@ func Atoi(s string) int {
 		signe = -1
 	}
 	for i := 0; i < tale; i++ {
-		if table[i] > '9' || table[i] < '0' && i != 0 {
-			return 0
-		} else {
-			art *= 10
-			art += int(table[i]) - '0'
-		}
 		if i == 0 && table[0] == '-' {
 			continue
 		}
 		if i == 0 && table[0] == '+' {
 			continue
+		}
+		if table[i] > '9' || table[i] < '0' && i != 0 {
+			return 0
+		} else {
+			art *= 10
+			art += int(table[i]) - '0'
 		}
 	}
 	return art * signe

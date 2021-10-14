@@ -5,6 +5,7 @@ func Atoi(s string) int {
 	art := 0
 	tale := len(table)
 	signe := 1
+
 	if tale == 0 {
 		return 0
 	}
@@ -25,5 +26,6 @@ func Atoi(s string) int {
 			art += int(table[i]) - '0'
 		}
 	}
+
 	return art * signe
 }

@@ -1,14 +1,16 @@
 package piscine
 
-import (
-	"fmt"
-	"strconv"
-)
-
 func BasicAtoi(s string) int {
-	i1, err := strconv.Atoi(s)
-	if err == nil {
-		fmt.Println(i1)
+	table := []rune(s)
+	art := 0
+	bb := len(table)
+	for i := 0; i < bb; i++ {
+		if table[i] > '9' || table[i] < '0' {
+			return art
+		} else {
+			art *= 10
+			art += int(table[i]) - '0'
+		}
 	}
-	return i1
+	return art
 }

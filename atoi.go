@@ -8,9 +8,6 @@ func Atoi(s string) int {
 	if table[0] == '-' {
 		signe = -1
 	}
-	if tale == 0 {
-		return 0
-	}
 	for i := 0; i < tale; i++ {
 		if i == 0 && table[0] == '-' {
 			continue

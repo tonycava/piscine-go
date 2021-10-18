@@ -13,6 +13,6 @@ func main() {
 		for _, w := range arg[i] {
 			z01.PrintRune(w)
 		}
+		z01.PrintRune('\n')
 	}
-	z01.PrintRune('\n')
 }

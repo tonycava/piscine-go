@@ -1,17 +1,38 @@
 package piscine
 
-func SplitWhiteSpaces(s string) []string {
-	var tap []string
-	var temp string
-	for i := 0; i < len(s)-1; i++ {
-		temp = temp + string(s[i])
-		if s[i] == ' ' {
-			tap = append(tap, temp)
-			temp = ""
+func SplitWhiteSpaces(str string) []string {
+	var arrayString []string
+	countWords := 1
+	lenStr := 0
+	result := ""
+	for c := range str {
+		if isWhiteSpace(str[c]) {
+			countWords++
 		}
-		if i == len(s)-1 {
-			tap = append(tap, temp)
+		lenStr++
+	}
+	arrayString = make([]string, countWords)
+	i := 0
+	for j, c := range str {
+		if j+1 == lenStr {
+			arrayString[i] = result + string(str[j])
+		}
+		if isWhiteSpace(str[j]) {
+			if i <= countWords {
+				arrayString[i] = result
+				i++
+				result = ""
+			}
+		} else {
+			result += string(c)
 		}
 	}
-	return tap
+	return arrayString
+}
+
+func isWhiteSpace(r byte) bool {
+	if r == ' ' || r == '\n' || r == '\t' {
+		return true
+	}
+	return false
 }

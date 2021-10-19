@@ -23,5 +23,4 @@ func main() {
 	points := &point{}
 	setPoint(points)
 	printStr("x = 42, y = 21")
-
 }

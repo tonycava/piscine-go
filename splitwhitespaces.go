@@ -5,7 +5,7 @@ func SplitWhiteSpaces(s string) []string {
 	var temp string
 	for index, w := range s {
 
-		if w != ' ' {
+		if w != ' ' || w != 11 && w != 9 && w != 13 {
 			temp = temp + string(w)
 		}
 		if w == 32 || w == 11 || w == 9 || w == 13 {

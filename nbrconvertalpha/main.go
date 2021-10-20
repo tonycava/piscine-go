@@ -33,6 +33,7 @@ func main() {
 	for i := 1; i < len(os.Args); i++ {
 		if BasicAtoi(arg[i]) >= 1 && BasicAtoi(arg[i]) <= 26 {
 			z01.PrintRune(rune(BasicAtoi(arg[i]) + upper))
+			z01.PrintRune('\n')
 		} else {
 			z01.PrintRune(' ')
 		}

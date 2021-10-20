@@ -23,19 +23,25 @@ func BasicAtoi(s string) int {
 
 func main() {
 	arg := os.Args
+	IsBlank := false
+	upper := 96
 	if len(arg) <= 1 {
 		return
+
 	}
-	upper := 96
 	if arg[1] == "--upper" {
 		upper = 64
 	}
 	for i := 1; i < len(os.Args); i++ {
 		if BasicAtoi(arg[i]) >= 1 && BasicAtoi(arg[i]) <= 26 {
 			z01.PrintRune(rune(BasicAtoi(arg[i]) + upper))
-			z01.PrintRune('\n')
+			IsBlank = true
 		} else {
 			z01.PrintRune(' ')
 		}
 	}
+	if IsBlank == true {
+		z01.PrintRune('\n')
+	}
+
 }

@@ -27,7 +27,6 @@ func main() {
 	upper := 96
 	if len(arg) <= 1 {
 		return
-
 	}
 	if arg[1] == "--upper" {
 		upper = 64
@@ -43,5 +42,4 @@ func main() {
 	if IsBlank == true {
 		z01.PrintRune('\n')
 	}
-
 }

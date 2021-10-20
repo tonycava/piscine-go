@@ -37,8 +37,10 @@ func main() {
 			IsBlank = true
 		} else if arg[i] == "--upper" {
 			continue
+			IsBlank = true
 		} else {
 			z01.PrintRune(' ')
+			IsBlank = true
 		}
 	}
 	if IsBlank == true {

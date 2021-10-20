@@ -23,12 +23,12 @@ func BasicAtoi(s string) int {
 
 func main() {
 	arg := os.Args
-	upper := 96
 	if len(arg) <= 1 {
 		return
 	}
+	upper := 96
 	if arg[1] == "--upper" {
-		upper = 47
+		upper = 64
 	}
 	for i := 1; i < len(os.Args); i++ {
 		if BasicAtoi(arg[i]) >= 1 && BasicAtoi(arg[i]) <= 26 {

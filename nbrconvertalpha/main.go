@@ -35,7 +35,7 @@ func main() {
 		if BasicAtoi(arg[i]) >= 1 && BasicAtoi(arg[i]) <= 26 {
 			z01.PrintRune(rune(BasicAtoi(arg[i]) + upper))
 			IsBlank = true
-		} else if BasicAtoi(arg[i]) == upper {
+		} else if BasicAtoi(arg[i]) == upper || BasicAtoi(arg[i]) == 56 {
 			z01.PrintRune(' ')
 		}
 	}

@@ -2,47 +2,28 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func PrintNbr(n int) {
-	table := []rune{}
-	var first rune
-	var second rune
-	if n == 0 {
+func PrintNum(num int) {
+	i := '0'
+	if num == 0 {
 		z01.PrintRune('0')
+		return
 	}
-	if n > 0 {
-		for n >= 1 {
-			c := n % 10
-			result := '0'
-			for i := 0; i < c; i++ {
-				result++
-			}
-			n = n / 10
-			table = append(table, result)
-		}
+	for j := 1; j <= num%10; j++ {
+		i++
 	}
+	for j := -1; j >= num%10; j-- {
+		i++
+	}
+	if num/10 != 0 {
+		PrintNum(num / 10)
+	}
+	z01.PrintRune(i)
+	return
+}
+
+func PrintNbr(n int) {
 	if n < 0 {
 		z01.PrintRune('-')
-		for n <= -1 {
-			c := n % 10
-			result := '0'
-			for i := 0; i > c; i-- {
-				result++
-			}
-			n = n / 10
-			table = append(table, result)
-		}
 	}
-	for i := 0; i < len(table); i++ {
-		for j := 0; j < len(table)-1; j++ {
-			first = table[j]
-			second = table[j+1]
-			if first > second {
-				table[j] = second
-				table[j+1] = first
-			}
-		}
-	}
-	for x := 0; x < len(table); x++ {
-		z01.PrintRune(table[x])
-	}
+	PrintNum(n)
 }

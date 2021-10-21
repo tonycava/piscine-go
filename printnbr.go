@@ -3,7 +3,6 @@ package piscine
 import "github.com/01-edu/z01"
 
 func PrintNbr(n int) {
-
 	table := []rune{}
 	var first rune
 	var second rune
